@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting and WhatsApp Link Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Greeting and WhatsApp Link Generator</h1>
+        <div class="feature-selector">
+            <button id="greetingFeatureBtn" class="active" onclick="showFeature('greeting')">Greeting Generator</button>
+            <button id="whatsappFeatureBtn" onclick="showFeature('whatsapp')">WhatsApp Link Generator</button>
+        </div>
+        <div class="forms-container">
+            <form id="greetingForm" class="form">
+                <h2>Greeting Generator</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="greetingBeforeName">Enter Greeting Before Name:</label>
+                        <textarea id="greetingBeforeName" name="greetingBeforeName" rows="2" cols="50">Hai hai</textarea>
+
+                        <label for="names">Enter Names (each name on a new line):</label>
+                        <textarea id="names" name="names" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customText">Enter Custom Text:</label>
+                        <textarea id="customText" name="customText" rows="18" cols="50">Welcome to our community.</textarea>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="generateGreeting()">Generate Greetings</button>
+                    <button type="button" onclick="resetForm('greeting')">Reset</button>
+                </div>
+            </form>
+            
+            <form id="whatsappForm" class="form" style="display: none;">
+                <h2>WhatsApp Link Generator</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="namesForLinks">Enter Names (each name on a new line):</label>
+                        <textarea id="namesForLinks" name="namesForLinks" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsappLinks">Enter WhatsApp Links (each link on a new line):</label>
+                        <textarea id="whatsappLinks" name="whatsappLinks" rows="10" cols="50"></textarea>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="generateWhatsAppLinks()">Generate WhatsApp Links</button>
+                    <button type="button" onclick="resetForm('whatsapp')">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div id="output">
+            <div id="greetingOutput">
+                <h2>Generated Greetings</h2>
+                <div id="greetings"></div>
+            </div>
+            <div id="whatsappOutput" style="display: none;">
+                <h2>Generated WhatsApp Links</h2>
+                <div id="whatsappCombined"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
